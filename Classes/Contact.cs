@@ -1,25 +1,32 @@
 using System.Security.Cryptography;
-
-public class Contact : IContact
+namespace ContactApp
 {
-  // Private fields to store name and number
-  private string name;
-  private int number;
-
-// Constructor
-  public Contact(string newName, int newNumber)
+  public class Contact : IContact
   {
-    name = newName;
-    number = newNumber;
-  }
+    // Private fields to store name and number
+    public string name;
+    public int number;
 
-  public void AddName(string newName)
-  {
-    name = newName;
-  }
+  // Constructor
+    public Contact(string newName, int newNumber)
+    {
+      name = newName;
+      number = newNumber;
+    }
 
-  public void AddNumber(int newNumber)
-  {
-    number = newNumber;
+    public void AddName(string newName)
+    {
+      name = newName;
+    }
+
+    public void AddNumber(int newNumber)
+    {
+      number = newNumber;
+    }
+
+    public override string ToString()
+    {
+      return name + ", " + number;
+    }
   }
 }
